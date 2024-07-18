@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="main w-full min-h-screen bg-zinc-900 pb-3 px-3">
+        <div class="form">
+            <form action="/create" method="post" class="flex flex-col w-1/2 mx-auto py-10 gap-4 ">
+                <input name="title" type="text" placeholder="Title"
+                    class="bg-zinc-800 rounded text-white outline-none p-2">
+                <textarea name="details" id="" placeholder="description"
+                    class="bg-zinc-800 rounded text-white outline-none resize-none p-2 " rows="8"></textarea>
+                <input type="submit" value="create"
+                    class="cursor-pointer inline-block py-2 text-xl font-semibold shadow-sm rounded shadow-gray-100 bg-white">
+            </form>
+        </div>
+        <div class="task-card  px-4 inline-block mx-auto text-white h-1/2 rounded mx-4">
+            <% if (files.length> 0) { %>
+                <% files.forEach((val)=> { %>
+                    <div class="card p-4 bg-zinc-800 rounded p-2">
+                        <h1 class="text-2xl font-semibold">
+                            <%= val %>
+                        </h1>
+                        <div class="flex justify-between gap-4">
+                            <a href="../files/<%= val %>" class="hover:underline text-blue-400 text-xs">Read more</a>
+                            <a href="/edit/<%= val %>" class=" text-zinc-300 text-xs">edit filename</a>
+                            
+                        </div>
+                    </div>
+                    <% }) } else { %>
+                        <p class="text-zinc-400">no task yet...</p>
+                        <% } %>
+
+        </div>
+    </div>
+</body>
+
+</html>
