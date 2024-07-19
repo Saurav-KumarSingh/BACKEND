@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-zinc-900">
+    <div>
+        <form action="/update/<%=user._id%>" method="post" class="p-2 border rounded w-1/4 mx-4 text-center my-2">
+            <h1 class="text-2xl text-white ">Update user 😊</h1>
+            <input name="name" type="text" class="text-zinc-200 bg-transparent w-full block px-3 py-2 my-2 outline-none border rounded"
+                placeholder="name" value="<%= user.name%>">
+            <input name="email" type="email" class="text-zinc-200 bg-transparent w-full block px-3 py-2 my-2 outline-none border rounded"
+                placeholder="email" value="<%= user.email%>">
+            <input name="url" type="text" class="text-zinc-200 bg-transparent w-full block px-3 py-2 my-2 outline-none border rounded"  
+                placeholder="imaqge url"  value="<%= user.url%>">
+                <input type="submit" value="update" class="cursor-pointer inline-bock px-3 py-1 rounded bg-yellow-600 text-zinc-200">
+        </form>        
+    </div>
+
+    <a href="/read" class="block text-blue-600 mx-4 mt-10">go and read all post</a>
+</body>
+
+</html>

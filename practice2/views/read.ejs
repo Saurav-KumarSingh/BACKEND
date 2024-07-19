@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-zinc-900 text-white">
+    <a href="/" class="block text-blue-600 mx-4 my-10 ">go and create a new post</a>
+    <div>
+        <h1 class="text-3xl text-center py-4 my-5">Read all Users</h1>
+        <div class=" card mx-2 flex flex-wrap">
+            <% users.forEach((val)=>{ %>
+                <div class="w-1/6 py-6 px-2 mx-2 bg-zinc-800 rounded shadow-md shadow-zinc-500 text-center">
+                    <div class="img h-48 content-center ">
+                        <img class="object-fill  h-48 w-40 m-auto rounded" src="<%=val.url%>" alt="">
+                    </div>
+                    <div class="data text-wrap break-words ">
+                        <h1 class="name text-2xl font-semibold"><%=val.name%></h1>
+                        <p class="email text-zinc-600 "><%=val.email%></p>
+                    </div>
+                    <div class="flex justify-between pt-2">
+                        <a  href="/edit/<%=val._id%>" class="bg-blue-600 px-2 py-1 rounded">edit</a>
+                        <a href="/delete/<%=val._id%>" class="bg-red-600 px-2 py-1 rounded">delete</a>
+                    </div>
+                </div>
+            <% }) %>
+            
+        </div>
+    </div>
+</body>
+
+</html>
